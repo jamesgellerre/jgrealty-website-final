@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-script: "Pinyon Script", cursive;
+
+  --color-cream: #FDFCF8;
+  --color-sand: #EADDC7;
+  --color-muted-gold: #B8A67D;
+  --color-luxury-text: #45362B;
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-luxury-text font-sans font-light antialiased leading-relaxed tracking-wide;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .luxury-label {
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-transform: none;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&family=Pinyon+Script&display=swap');
