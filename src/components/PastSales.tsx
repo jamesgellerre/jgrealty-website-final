@@ -1,20 +1,21 @@
 import { motion } from 'motion/react';
 import { PAST_SALES } from '../constants';
+import { listingAlt } from '../site';
 import { Home, Maximize, MapPin, ArrowRight } from 'lucide-react';
 
 interface PastSalesProps {
   limit?: number;
-  onViewMore?: () => void;
+  viewMoreHref?: string;
   hideSubheading?: boolean;
 }
 
-export default function PastSales({ limit, onViewMore, hideSubheading }: PastSalesProps) {
+export default function PastSales({ limit, viewMoreHref, hideSubheading }: PastSalesProps) {
   const displayedSales = limit ? PAST_SALES.slice(0, limit) : PAST_SALES;
 
   return (
     <section id="sales" className="py-24 px-6 bg-cream">
       <div className="max-w-7xl mx-auto">
-        <div className={`flex flex-col md:flex-row justify-between items-end gap-6 ${hideSubheading ? 'mb-6' : 'mb-12'}`}>
+        <div className={`${hideSubheading ? 'mb-6' : 'mb-12'}`}>
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -27,16 +28,6 @@ export default function PastSales({ limit, onViewMore, hideSubheading }: PastSal
               </p>
             )}
           </motion.div>
-          
-          {onViewMore && (
-            <motion.button
-              whileHover={{ x: 5 }}
-              onClick={onViewMore}
-              className="flex items-center gap-2 text-muted-gold luxury-label group"
-            >
-              View More Sales <ArrowRight className="w-4 h-4" />
-            </motion.button>
-          )}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -53,7 +44,7 @@ export default function PastSales({ limit, onViewMore, hideSubheading }: PastSal
                 <div className="aspect-[16/9] overflow-hidden">
                   <img 
                     src={property.imageUrl} 
-                    alt={property.address}
+                    alt={listingAlt(property)}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     referrerPolicy="no-referrer"
                   />
@@ -103,6 +94,18 @@ export default function PastSales({ limit, onViewMore, hideSubheading }: PastSal
             </motion.div>
           ))}
         </div>
+
+        {viewMoreHref && (
+          <div className="mt-14 flex justify-center">
+            <a
+              href={viewMoreHref}
+              className="inline-flex w-full max-w-sm items-center justify-center gap-3 bg-sand text-luxury-text border border-luxury-text/10 px-10 py-5 rounded-full text-lg font-light italic tracking-wide shadow-lg shadow-muted-gold/10 transition-all hover:bg-muted-gold hover:text-white sm:w-auto sm:min-w-[280px] sm:px-16"
+            >
+              View All Sales
+              <ArrowRight className="w-5 h-5" aria-hidden="true" />
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );
