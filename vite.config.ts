@@ -6,7 +6,6 @@ import {defineConfig, loadEnv} from 'vite';
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   return {
-    plugins: [react(), tailwindcss()],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
     },
@@ -20,5 +19,30 @@ export default defineConfig(({mode}) => {
       // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',
     },
+    plugins: [
+      react(),
+      tailwindcss(),
+      {
+        name: 'sales-route',
+        configureServer(server) {
+          server.middlewares.use((req, _res, next) => {
+            const url = req.url?.split('?')[0];
+            if (url === '/sales' || url === '/sales/') {
+              req.url = '/';
+            }
+            next();
+          });
+        },
+        configurePreviewServer(server) {
+          server.middlewares.use((req, _res, next) => {
+            const url = req.url?.split('?')[0];
+            if (url === '/sales' || url === '/sales/') {
+              req.url = '/sales/index.html';
+            }
+            next();
+          });
+        },
+      },
+    ],
   };
 });

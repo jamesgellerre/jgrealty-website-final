@@ -10,7 +10,7 @@ export const PAST_SALES: Property[] = [
     baths: 2,
     sqft: 1432,
     representation: "Represented Buyer & Seller",
-    imageUrl: "/1446-N-Rose-St.jpg"
+    imageUrl: "/1446-N-Rose-St.webp"
   },
   {
     id: 14,
@@ -21,7 +21,7 @@ export const PAST_SALES: Property[] = [
     baths: 3,
     sqft: 2246,
     representation: "Represented Seller",
-    imageUrl: "/32038-Waterside-Ln-aerial.jpg"
+    imageUrl: "/32038-Waterside-Ln-aerial.webp"
   },
   {
     id: 1,
@@ -32,7 +32,7 @@ export const PAST_SALES: Property[] = [
     baths: 1,
     sqft: 1085,
     lotSize: "9583 sqft lot",
-    imageUrl: "/4326-Briggs-Ave.jpg"
+    imageUrl: "/4326-Briggs-Ave.webp"
   },
   {
     id: 2,
@@ -43,7 +43,7 @@ export const PAST_SALES: Property[] = [
     baths: 1,
     sqft: 1225,
     lotSize: "8111 sqft lot",
-    imageUrl: "/11144-Hershey-St.jpg"
+    imageUrl: "/11144-Hershey-St.webp"
   },
   {
     id: 3,
@@ -53,7 +53,7 @@ export const PAST_SALES: Property[] = [
     beds: 2,
     baths: 1,
     sqft: 858,
-    imageUrl: "/23201-Sherman-Way-Unit-F.jpg"
+    imageUrl: "/23201-Sherman-Way-Unit-F.webp"
   },
   {
     id: 4,
@@ -64,7 +64,7 @@ export const PAST_SALES: Property[] = [
     baths: 2,
     sqft: 1486,
     lotSize: "6534 sqft lot",
-    imageUrl: "/1780-Summer-Cloud.jpg"
+    imageUrl: "/1780-Summer-Cloud.webp"
   },
   {
     id: 5,
@@ -75,7 +75,7 @@ export const PAST_SALES: Property[] = [
     baths: 3,
     sqft: 1484,
     lotSize: "6098 sqft lot",
-    imageUrl: "/1142-N-Rose-St.jpg"
+    imageUrl: "/1142-N-Rose-St.webp"
   },
   {
     id: 6,
@@ -86,7 +86,7 @@ export const PAST_SALES: Property[] = [
     baths: 3,
     sqft: 2012,
     lotSize: "3408 sqft lot",
-    imageUrl: "/30114-Diana-Ct.jpg"
+    imageUrl: "/30114-Diana-Ct.webp"
   },
   {
     id: 7,
@@ -96,7 +96,7 @@ export const PAST_SALES: Property[] = [
     beds: 3,
     baths: 3,
     sqft: 1332,
-    imageUrl: "/396-Via-Colinas.jpg"
+    imageUrl: "/396-Via-Colinas.webp"
   },
   {
     id: 8,
@@ -107,7 +107,7 @@ export const PAST_SALES: Property[] = [
     baths: 3,
     sqft: 2246,
     lotSize: "4366 sqft lot",
-    imageUrl: "/32038-Waterside-Ln.jpg"
+    imageUrl: "/32038-Waterside-Ln.webp"
   },
   {
     id: 9,
@@ -118,7 +118,7 @@ export const PAST_SALES: Property[] = [
     baths: 2,
     sqft: 2024,
     lotSize: "0.26 acre",
-    imageUrl: "/10327-Wish-Ave.jpg"
+    imageUrl: "/10327-Wish-Ave.webp"
   },
   {
     id: 10,
@@ -129,7 +129,7 @@ export const PAST_SALES: Property[] = [
     baths: 2,
     sqft: 1619,
     lotSize: "7437 sqft lot",
-    imageUrl: "/11712-N-Circle-Dr.jpg"
+    imageUrl: "/11712-N-Circle-Dr.webp"
   },
   {
     id: 11,
@@ -140,7 +140,7 @@ export const PAST_SALES: Property[] = [
     baths: 3,
     sqft: 1600,
     lotSize: "6053 sqft lot",
-    imageUrl: "/30758-Lakefront-Dr.jpg"
+    imageUrl: "/30758-Lakefront-Dr.webp"
   },
   {
     id: 12,
@@ -151,6 +151,6 @@ export const PAST_SALES: Property[] = [
     baths: 1,
     sqft: 1087,
     lotSize: "5800 sqft lot",
-    imageUrl: "/1860-Plaza-Del-Amo.jpg"
+    imageUrl: "/1860-Plaza-Del-Amo.webp"
   }
 ];

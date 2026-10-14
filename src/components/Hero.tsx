@@ -15,7 +15,7 @@ export default function Hero({ onNavigate }: { onNavigate?: (view: string) => vo
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/skyline-background.png" 
+          src="/skyline-background.webp" 
           alt="Skyline of Los Angeles"
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
@@ -32,7 +32,7 @@ export default function Hero({ onNavigate }: { onNavigate?: (view: string) => vo
           className="max-w-2xl text-left"
         >
           <img 
-            src="/james-signature.png" 
+            src="/james-signature.webp" 
             alt="James Geller Signature" 
             className="h-24 md:h-36 w-auto mb-0 object-contain"
             referrerPolicy="no-referrer"
@@ -56,7 +56,7 @@ export default function Hero({ onNavigate }: { onNavigate?: (view: string) => vo
           className="md:hidden absolute bottom-[17.5%] left-0 right-0 px-6 flex justify-center"
         >
           <a 
-            href="#contact" 
+            href="/#contact" 
             onClick={(e) => handleNavClick(e, 'contact')}
             className="bg-sand text-luxury-text border border-luxury-text/10 px-6 py-2.5 rounded-full luxury-label text-[10px] text-center hover:bg-muted-gold hover:text-white transition-all shadow-lg"
           >

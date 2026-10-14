@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { BIO_PARAGRAPHS } from '../site';
 
 export default function About() {
   return (
@@ -15,7 +16,7 @@ export default function About() {
           >
             <div className="w-full max-w-[400px] aspect-[4/5] rounded-t-[200px] rounded-b-[40px] overflow-hidden shadow-[0_46px_92px_-18px_rgba(69,54,43,0.4)] relative z-10">
               <img 
-                src="/james-headshot.jpg" 
+                src="/james-headshot.webp" 
                 alt="James Geller - Real Estate Broker"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -39,27 +40,23 @@ export default function About() {
           >
             <div className="space-y-4">
               <span className="luxury-label text-muted-gold opacity-80">Meet James</span>
-              <h2 className="text-5xl font-serif leading-tight">James Geller</h2>
+              <h1 className="text-5xl font-serif leading-tight">James Geller</h1>
             </div>
 
             <div className="space-y-6 text-luxury-text/80 leading-relaxed text-lg">
-              <p>
-                Born and raised in the heart of the San Fernando Valley, James has a deep understanding of the Los Angeles real estate market. He proudly serves clients throughout the San Fernando Valley, Conejo Valley, and the greater Los Angeles area.
-              </p>
-              <p>
-                Since becoming a licensed broker in 2022, James has worked closely with investors across Southern California, honing his ability to identify opportunities that maximize value—whether it's a first-time home purchase or a strategic investment.
-              </p>
-              <p>
-                James is committed to providing a seamless experience with clear, transparent communication, ensuring his clients feel confident and informed every step of the way.
-              </p>
-              <p className="font-serif italic text-2xl text-luxury-text/90 border-l-2 border-muted-gold/20 pl-6 py-2">
-                Whether you're searching for your next home, investment property, or a free home evaluation, get in touch with James today.
-              </p>
+              {BIO_PARAGRAPHS.map((paragraph, index) => (
+                <p
+                  key={paragraph}
+                  className={index === BIO_PARAGRAPHS.length - 1 ? 'font-serif italic text-2xl text-luxury-text/90 border-l-2 border-muted-gold/20 pl-6 py-2' : undefined}
+                >
+                  {paragraph}
+                </p>
+              ))}
             </div>
 
             <div className="pt-4">
               <a 
-                href="#contact" 
+                href="/#contact" 
                 className="inline-block bg-sand text-luxury-text border border-luxury-text/10 px-10 py-4 rounded-full luxury-label hover:bg-muted-gold hover:text-white transition-all shadow-lg shadow-muted-gold/10"
               >
                 Connect With James

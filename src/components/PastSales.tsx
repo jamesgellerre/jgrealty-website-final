@@ -1,14 +1,15 @@
 import { motion } from 'motion/react';
 import { PAST_SALES } from '../constants';
+import { listingAlt } from '../site';
 import { Home, Maximize, MapPin, ArrowRight } from 'lucide-react';
 
 interface PastSalesProps {
   limit?: number;
-  onViewMore?: () => void;
+  viewMoreHref?: string;
   hideSubheading?: boolean;
 }
 
-export default function PastSales({ limit, onViewMore, hideSubheading }: PastSalesProps) {
+export default function PastSales({ limit, viewMoreHref, hideSubheading }: PastSalesProps) {
   const displayedSales = limit ? PAST_SALES.slice(0, limit) : PAST_SALES;
 
   return (
@@ -28,14 +29,14 @@ export default function PastSales({ limit, onViewMore, hideSubheading }: PastSal
             )}
           </motion.div>
           
-          {onViewMore && (
-            <motion.button
+          {viewMoreHref && (
+            <motion.a
+              href={viewMoreHref}
               whileHover={{ x: 5 }}
-              onClick={onViewMore}
               className="flex items-center gap-2 text-muted-gold luxury-label group"
             >
               View More Sales <ArrowRight className="w-4 h-4" />
-            </motion.button>
+            </motion.a>
           )}
         </div>
 
@@ -53,7 +54,7 @@ export default function PastSales({ limit, onViewMore, hideSubheading }: PastSal
                 <div className="aspect-[16/9] overflow-hidden">
                   <img 
                     src={property.imageUrl} 
-                    alt={property.address}
+                    alt={listingAlt(property)}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     referrerPolicy="no-referrer"
                   />

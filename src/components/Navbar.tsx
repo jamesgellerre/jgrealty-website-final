@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { isSalesPath } from '../site';
 
 export default function Navbar({ onNavigate }: { onNavigate?: (view: string) => void }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,10 +25,11 @@ export default function Navbar({ onNavigate }: { onNavigate?: (view: string) => 
   }, []);
 
   const handleNavClick = (e: React.MouseEvent, view: string) => {
-    if (onNavigate) {
+    setIsMenuOpen(false);
+    const onHome = !isSalesPath(window.location.pathname);
+    if (onHome && onNavigate) {
       e.preventDefault();
       onNavigate(view);
-      setIsMenuOpen(false);
     }
   };
 
@@ -43,7 +45,8 @@ export default function Navbar({ onNavigate }: { onNavigate?: (view: string) => 
         } px-6`}
       >
         <div className="max-w-7xl mx-auto flex justify-center md:justify-between items-center relative">
-          <div className="flex items-center justify-center md:justify-start gap-1.5 cursor-pointer -ml-2 md:ml-0 w-full md:w-auto" onClick={(e) => handleNavClick(e, 'home')}>
+          <a href="/" className="flex items-center justify-center md:justify-start gap-1.5 cursor-pointer -ml-2 md:ml-0 w-full md:w-auto" onClick={(e) => handleNavClick(e, 'home')}>
+            <span className="sr-only">James Geller, The ONE Luxury Properties</span>
             <div 
               className={`bg-luxury-text transition-all duration-500 -mr-2.5 ${
                 isScrolled ? 'h-10 md:h-12 w-[80px] md:w-[100px]' : 'h-14 md:h-[64px] w-[100px] md:w-[120px]'
@@ -75,13 +78,13 @@ export default function Navbar({ onNavigate }: { onNavigate?: (view: string) => 
                 WebkitMaskPosition: 'center'
               }}
             />
-          </div>
+          </a>
           
           <div className="hidden md:flex items-center gap-12 luxury-label">
-            <a href="#" onClick={(e) => handleNavClick(e, 'home')} className="hover:text-muted-gold transition-colors">Home</a>
-            <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="hover:text-muted-gold transition-colors">About</a>
-            <a href="#sales" onClick={(e) => handleNavClick(e, 'sales')} className="hover:text-muted-gold transition-colors">Sales</a>
-            <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="bg-sand text-luxury-text border border-luxury-text/10 px-8 py-3 rounded-full hover:bg-muted-gold hover:text-white transition-all">Connect with Me</a>
+            <a href="/" onClick={(e) => handleNavClick(e, 'home')} className="hover:text-muted-gold transition-colors">Home</a>
+            <a href="/#about" onClick={(e) => handleNavClick(e, 'about')} className="hover:text-muted-gold transition-colors">About</a>
+            <a href="/#sales" onClick={(e) => handleNavClick(e, 'sales')} className="hover:text-muted-gold transition-colors">Sales</a>
+            <a href="/#contact" onClick={(e) => handleNavClick(e, 'contact')} className="bg-sand text-luxury-text border border-luxury-text/10 px-8 py-3 rounded-full hover:bg-muted-gold hover:text-white transition-all">Connect with Me</a>
           </div>
 
           <button 
@@ -103,10 +106,10 @@ export default function Navbar({ onNavigate }: { onNavigate?: (view: string) => 
             exit={{ opacity: 0, x: '100%' }}
             className="fixed inset-0 z-40 bg-cream flex flex-col items-center justify-center gap-8 luxury-label text-2xl"
           >
-            <a href="#" onClick={(e) => handleNavClick(e, 'home')} className="hover:text-muted-gold transition-colors">Home</a>
-            <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="hover:text-muted-gold transition-colors">About</a>
-            <a href="#sales" onClick={(e) => handleNavClick(e, 'sales')} className="hover:text-muted-gold transition-colors">Sales</a>
-            <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="bg-sand text-luxury-text border border-luxury-text/10 px-12 py-4 rounded-full hover:bg-muted-gold hover:text-white transition-all">Connect with Me</a>
+            <a href="/" onClick={(e) => handleNavClick(e, 'home')} className="hover:text-muted-gold transition-colors">Home</a>
+            <a href="/#about" onClick={(e) => handleNavClick(e, 'about')} className="hover:text-muted-gold transition-colors">About</a>
+            <a href="/#sales" onClick={(e) => handleNavClick(e, 'sales')} className="hover:text-muted-gold transition-colors">Sales</a>
+            <a href="/#contact" onClick={(e) => handleNavClick(e, 'contact')} className="bg-sand text-luxury-text border border-luxury-text/10 px-12 py-4 rounded-full hover:bg-muted-gold hover:text-white transition-all">Connect with Me</a>
           </motion.div>
         )}
       </AnimatePresence>

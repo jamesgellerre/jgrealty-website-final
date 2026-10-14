@@ -1,9 +1,11 @@
 import React from 'react';
 import { Mail, Phone, Instagram } from 'lucide-react';
+import { AGENT, isSalesPath, serviceCitySentence } from '../site';
 
 export default function Footer({ onNavigate }: { onNavigate?: (view: string) => void }) {
   const handleNavClick = (e: React.MouseEvent, view: string) => {
-    if (onNavigate) {
+    const onHome = !isSalesPath(window.location.pathname);
+    if (onHome && onNavigate) {
       e.preventDefault();
       onNavigate(view);
     }
@@ -14,7 +16,8 @@ export default function Footer({ onNavigate }: { onNavigate?: (view: string) => 
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-16">
           <div className="space-y-8">
-            <div className="flex items-center justify-center md:justify-start gap-1.5 cursor-pointer -ml-2 md:ml-0" onClick={(e) => handleNavClick(e, 'home')}>
+            <a href="/" className="flex items-center justify-center md:justify-start gap-1.5 cursor-pointer -ml-2 md:ml-0" onClick={(e) => handleNavClick(e, 'home')}>
+              <span className="sr-only">James Geller, The ONE Luxury Properties</span>
               <div 
                 className="h-[64px] w-[120px] bg-luxury-text opacity-80 -mr-2.5" 
                 style={{
@@ -42,7 +45,7 @@ export default function Footer({ onNavigate }: { onNavigate?: (view: string) => 
                   WebkitMaskPosition: 'center'
                 }}
               />
-            </div>
+            </a>
             <p className="opacity-60 max-w-xs italic">
               Modern strategy. Local expertise. The right approach to every move.
             </p>
@@ -51,10 +54,10 @@ export default function Footer({ onNavigate }: { onNavigate?: (view: string) => 
           <div className="space-y-6">
             <h4 className="luxury-label opacity-40">Navigation</h4>
             <ul className="space-y-4 text-sm">
-              <li><a href="#" onClick={(e) => handleNavClick(e, 'home')} className="hover:text-muted-gold transition-colors">Home</a></li>
-              <li><a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="hover:text-muted-gold transition-colors">About James</a></li>
-              <li><a href="#sales" onClick={(e) => handleNavClick(e, 'sales')} className="hover:text-muted-gold transition-colors">Past Sales</a></li>
-              <li><a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="hover:text-muted-gold transition-colors">Contact</a></li>
+              <li><a href="/" onClick={(e) => handleNavClick(e, 'home')} className="hover:text-muted-gold transition-colors">Home</a></li>
+              <li><a href="/#about" onClick={(e) => handleNavClick(e, 'about')} className="hover:text-muted-gold transition-colors">About James</a></li>
+              <li><a href="/sales" className="hover:text-muted-gold transition-colors">Past Sales</a></li>
+              <li><a href="/#contact" onClick={(e) => handleNavClick(e, 'contact')} className="hover:text-muted-gold transition-colors">Contact</a></li>
             </ul>
           </div>
 
@@ -62,16 +65,26 @@ export default function Footer({ onNavigate }: { onNavigate?: (view: string) => 
             <h4 className="luxury-label opacity-40">Contact</h4>
             <ul className="space-y-4 text-sm">
               <li className="opacity-60 italic">Servicing the Conejo Valley, San Fernando Valley, and the greater Los Angeles area.</li>
+              <li className="opacity-60 italic">{serviceCitySentence()}</li>
               <li>
-                <a href="mailto:jamesgellerRE@gmail.com" className="flex items-center gap-2 hover:text-muted-gold transition-colors">
+                <address className="not-italic opacity-80">
+                  {AGENT.name}<br />
+                  {AGENT.brokerage}<br />
+                  {AGENT.street}<br />
+                  {`${AGENT.city}, ${AGENT.region} ${AGENT.postalCode}`}
+                </address>
+              </li>
+              <li>
+                <a href={`mailto:${AGENT.email}`} className="flex items-center gap-2 hover:text-muted-gold transition-colors">
                   <Mail className="w-4 h-4 opacity-60" />
-                  jamesgellerRE@gmail.com
+                  {AGENT.email}
                 </a>
               </li>
               <li>
-                <a href="tel:8185158391" className="flex items-center gap-2 hover:text-muted-gold transition-colors">
+                <a href={`tel:${AGENT.phoneTel}`} className="flex items-center gap-2 hover:text-muted-gold transition-colors">
                   <Phone className="w-4 h-4 opacity-60" />
-                  818-515-8391
+                  <span>{AGENT.phoneDisplay}</span>
+                  <span className="sr-only">{AGENT.phoneE164}</span>
                 </a>
               </li>
               <li>
