@@ -93,6 +93,12 @@ export default function PastSales({ limit, onViewMore, hideSubheading }: PastSal
                     <span>{property.lotSize}</span>
                   </div>
                 )}
+
+                {property.representation && (
+                  <p className={`luxury-label text-luxury-text/60 ${property.lotSize ? 'mt-3' : 'mt-6'}`}>
+                    {property.representation}
+                  </p>
+                )}
               </div>
             </motion.div>
           ))}
