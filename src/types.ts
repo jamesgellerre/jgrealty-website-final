@@ -8,6 +8,7 @@ export interface Property {
   sqft: number;
   lotSize?: string;
   imageUrl?: string;
+  representation?: string;
 }
 
 export interface LeadFormData {

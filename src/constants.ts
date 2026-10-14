@@ -2,6 +2,28 @@ import { Property } from './types';
 
 export const PAST_SALES: Property[] = [
   {
+    id: 13,
+    address: "1446 N Rose St.",
+    city: "Burbank",
+    price: "$1,048,000",
+    beds: 3,
+    baths: 2,
+    sqft: 1432,
+    representation: "Represented Buyer & Seller",
+    imageUrl: "/1446-N-Rose-St.jpg"
+  },
+  {
+    id: 14,
+    address: "32038 Waterside Ln.",
+    city: "Westlake Village",
+    price: "$1,398,000",
+    beds: 4,
+    baths: 3,
+    sqft: 2246,
+    representation: "Represented Seller",
+    imageUrl: "/32038-Waterside-Ln-aerial.jpg"
+  },
+  {
     id: 1,
     address: "4326 Briggs Ave.",
     city: "Montrose",
