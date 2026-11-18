@@ -51,4 +51,8 @@ for (const page of pages) {
 const llms = llmsText();
 fs.writeFileSync(path.join(dist, 'llms.txt'), llms);
 fs.writeFileSync(path.join(root, 'public', 'llms.txt'), llms);
+const serverLlms = path.join(dist, 'server', 'llms.txt');
+if (fs.existsSync(path.dirname(serverLlms))) {
+  fs.writeFileSync(serverLlms, llms);
+}
 console.log('wrote llms.txt');

@@ -4,15 +4,17 @@ import type { Property } from './types';
 export const SITE_URL = 'https://www.jamesgellerrealty.com';
 export const SITE_NAME = 'James Geller Realty';
 
+export const BROKERAGE_LOGO_ALT = 'RISE Real Estate Group, Real Broker';
+
 export const AGENT = {
   name: 'James Geller',
-  brokerage: 'The ONE Luxury Properties',
+  brokerage: 'RISE Real Estate Group | Real Broker',
   dre: '02154616',
   phoneDisplay: '818-515-8391',
   phoneE164: '+1-818-515-8391',
   phoneTel: '+18185158391',
   email: 'jamesgellerRE@gmail.com',
-  street: '2535 Townsgate Rd Ste 109',
+  street: '2829 Townsgate Rd #100',
   city: 'Westlake Village',
   region: 'CA',
   postalCode: '91361',
@@ -36,10 +38,10 @@ export const SERVICE_CITIES = [
 ] as const;
 
 export const HOME_DESCRIPTION =
-  'James Geller is a broker-associate at The ONE Luxury Properties (DRE# 02154616) serving buyers and sellers in the Conejo Valley and San Fernando Valley.';
+  `James Geller is a broker-associate at ${AGENT.brokerage} (DRE# ${AGENT.dre}) serving buyers and sellers in the Conejo Valley and San Fernando Valley.`;
 
 export const SALES_DESCRIPTION =
-  'Past sales by James Geller, broker-associate at The ONE Luxury Properties (DRE# 02154616), across the Conejo Valley and San Fernando Valley.';
+  `Past sales by James Geller, broker-associate at ${AGENT.brokerage} (DRE# ${AGENT.dre}), across the Conejo Valley and San Fernando Valley.`;
 
 export const BIO_PARAGRAPHS = [
   'Born and raised in the heart of the San Fernando Valley, James has a deep understanding of the Los Angeles real estate market. He proudly serves clients throughout the San Fernando Valley, Conejo Valley, and the greater Los Angeles area.',
