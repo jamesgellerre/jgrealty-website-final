@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, Phone, Instagram } from 'lucide-react';
-import { AGENT, isSalesPath, serviceCitySentence } from '../site';
+import { AGENT, BROKERAGE_LOGO_ALT, isSalesPath, serviceCitySentence } from '../site';
 
 export default function Footer({ onNavigate }: { onNavigate?: (view: string) => void }) {
   const handleNavClick = (e: React.MouseEvent, view: string) => {
@@ -17,7 +17,7 @@ export default function Footer({ onNavigate }: { onNavigate?: (view: string) => 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-16">
           <div className="space-y-8">
             <a href="/" className="flex items-center justify-center md:justify-start gap-1.5 cursor-pointer -ml-2 md:ml-0" onClick={(e) => handleNavClick(e, 'home')}>
-              <span className="sr-only">James Geller, The ONE Luxury Properties</span>
+              <span className="sr-only">James Geller</span>
               <div 
                 className="h-[64px] w-[120px] bg-luxury-text opacity-80 -mr-2.5" 
                 style={{
@@ -32,18 +32,10 @@ export default function Footer({ onNavigate }: { onNavigate?: (view: string) => 
                 }}
               />
               <div className="h-10 w-px bg-luxury-text/10" />
-              <div 
-                className="h-12 w-[120px] bg-luxury-text opacity-80" 
-                style={{
-                  maskImage: 'url(/company-logo.png)',
-                  maskSize: 'contain',
-                  maskRepeat: 'no-repeat',
-                  maskPosition: 'center',
-                  WebkitMaskImage: 'url(/company-logo.png)',
-                  WebkitMaskSize: 'contain',
-                  WebkitMaskRepeat: 'no-repeat',
-                  WebkitMaskPosition: 'center'
-                }}
+              <img
+                src="/rise-logo-black.png"
+                alt={BROKERAGE_LOGO_ALT}
+                className="h-16 w-auto object-contain opacity-80"
               />
             </a>
             <p className="opacity-60 max-w-xs italic">
@@ -99,7 +91,7 @@ export default function Footer({ onNavigate }: { onNavigate?: (view: string) => 
 
         <div className="pt-8 border-t border-luxury-text/10 flex flex-col md:flex-row justify-between items-center gap-4 luxury-label opacity-40">
           <p>© 2026 James Geller. All Rights Reserved.</p>
-          <p>Licensed Broker-Associate. The ONE Luxury Properties | DRE# 02154616</p>
+          <p>Licensed Broker-Associate. {AGENT.brokerage} | DRE# {AGENT.dre}</p>
         </div>
       </div>
     </footer>

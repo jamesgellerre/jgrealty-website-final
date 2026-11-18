@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { isSalesPath } from '../site';
+import { BROKERAGE_LOGO_ALT, isSalesPath } from '../site';
 
 export default function Navbar({ onNavigate }: { onNavigate?: (view: string) => void }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,7 +46,7 @@ export default function Navbar({ onNavigate }: { onNavigate?: (view: string) => 
       >
         <div className="max-w-7xl mx-auto flex justify-center md:justify-between items-center relative">
           <a href="/" className="flex items-center justify-center md:justify-start gap-1.5 cursor-pointer -ml-2 md:ml-0 w-full md:w-auto" onClick={(e) => handleNavClick(e, 'home')}>
-            <span className="sr-only">James Geller, The ONE Luxury Properties</span>
+            <span className="sr-only">James Geller</span>
             <div 
               className={`bg-luxury-text transition-all duration-500 -mr-2.5 ${
                 isScrolled ? 'h-10 md:h-12 w-[80px] md:w-[100px]' : 'h-14 md:h-[64px] w-[100px] md:w-[120px]'
@@ -63,20 +63,12 @@ export default function Navbar({ onNavigate }: { onNavigate?: (view: string) => 
               }}
             />
             <div className="h-6 md:h-8 w-px bg-luxury-text/10" />
-            <div 
-              className={`bg-luxury-text transition-all duration-500 ${
-                isScrolled ? 'h-8 md:h-10 w-[80px] md:w-[100px]' : 'h-10 md:h-12 w-[100px] md:w-[120px]'
+            <img
+              src="/rise-logo-black.png"
+              alt={BROKERAGE_LOGO_ALT}
+              className={`object-contain transition-all duration-500 ${
+                isScrolled ? 'h-10 md:h-12 w-auto' : 'h-14 md:h-16 w-auto'
               }`}
-              style={{
-                maskImage: 'url(/company-logo.png)',
-                maskSize: 'contain',
-                maskRepeat: 'no-repeat',
-                maskPosition: 'center',
-                WebkitMaskImage: 'url(/company-logo.png)',
-                WebkitMaskSize: 'contain',
-                WebkitMaskRepeat: 'no-repeat',
-                WebkitMaskPosition: 'center'
-              }}
             />
           </a>
           
