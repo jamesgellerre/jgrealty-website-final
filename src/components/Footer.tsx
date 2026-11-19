@@ -32,10 +32,20 @@ export default function Footer({ onNavigate }: { onNavigate?: (view: string) => 
                 }}
               />
               <div className="h-10 w-px bg-luxury-text/10" />
-              <img
-                src="/rise-logo-black.png"
-                alt={BROKERAGE_LOGO_ALT}
-                className="h-16 w-auto object-contain opacity-80"
+              <div
+                role="img"
+                aria-label={BROKERAGE_LOGO_ALT}
+                className="h-[45px] w-[60px] bg-luxury-text opacity-80"
+                style={{
+                  maskImage: 'url(/rise-logo-black.png)',
+                  maskSize: 'contain',
+                  maskRepeat: 'no-repeat',
+                  maskPosition: 'center',
+                  WebkitMaskImage: 'url(/rise-logo-black.png)',
+                  WebkitMaskSize: 'contain',
+                  WebkitMaskRepeat: 'no-repeat',
+                  WebkitMaskPosition: 'center'
+                }}
               />
             </a>
             <p className="opacity-60 max-w-xs italic">

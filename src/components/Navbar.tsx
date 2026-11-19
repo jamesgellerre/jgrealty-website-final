@@ -63,12 +63,24 @@ export default function Navbar({ onNavigate }: { onNavigate?: (view: string) => 
               }}
             />
             <div className="h-6 md:h-8 w-px bg-luxury-text/10" />
-            <img
-              src="/rise-logo-black.png"
-              alt={BROKERAGE_LOGO_ALT}
-              className={`object-contain transition-all duration-500 ${
-                isScrolled ? 'h-10 md:h-12 w-auto' : 'h-14 md:h-16 w-auto'
+            <div
+              role="img"
+              aria-label={BROKERAGE_LOGO_ALT}
+              className={`bg-luxury-text transition-all duration-500 ${
+                isScrolled
+                  ? 'h-[30px] w-[40px] md:h-[37px] md:w-[49px]'
+                  : 'h-[37px] w-[49px] md:h-[45px] md:w-[60px]'
               }`}
+              style={{
+                maskImage: 'url(/rise-logo-black.png)',
+                maskSize: 'contain',
+                maskRepeat: 'no-repeat',
+                maskPosition: 'center',
+                WebkitMaskImage: 'url(/rise-logo-black.png)',
+                WebkitMaskSize: 'contain',
+                WebkitMaskRepeat: 'no-repeat',
+                WebkitMaskPosition: 'center'
+              }}
             />
           </a>
           
