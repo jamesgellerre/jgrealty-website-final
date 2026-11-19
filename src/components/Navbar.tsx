@@ -68,8 +68,8 @@ export default function Navbar({ onNavigate }: { onNavigate?: (view: string) => 
               aria-label={BROKERAGE_LOGO_ALT}
               className={`bg-luxury-text transition-all duration-500 ${
                 isScrolled
-                  ? 'ml-[14.8px] h-[35px] w-[46.17px] md:ml-[21.7px] md:h-[42.5px] md:w-[56.07px]'
-                  : 'ml-[18.8px] h-[46.5px] w-[61.35px] md:ml-[25.7px] md:h-[54.5px] md:w-[71.9px]'
+                  ? 'ml-[14.8px] -translate-y-[1.95px] h-[35px] w-[46.17px] md:ml-[21.7px] md:-translate-y-[2.57px] md:h-[42.5px] md:w-[56.07px]'
+                  : 'ml-[18.8px] -translate-y-[1.57px] h-[46.5px] w-[61.35px] md:ml-[25.7px] md:-translate-y-[2.42px] md:h-[54.5px] md:w-[71.9px]'
               }`}
               style={{
                 maskImage: 'url(/rise-logo-black.png)',

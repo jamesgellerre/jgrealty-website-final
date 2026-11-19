@@ -35,7 +35,7 @@ export default function Footer({ onNavigate }: { onNavigate?: (view: string) => 
               <div
                 role="img"
                 aria-label={BROKERAGE_LOGO_ALT}
-                className="ml-[25.7px] h-[54.5px] w-[71.9px] bg-luxury-text opacity-80"
+                className="ml-[25.7px] -translate-y-[2.42px] h-[54.5px] w-[71.9px] bg-luxury-text opacity-80"
                 style={{
                   maskImage: 'url(/rise-logo-black.png)',
                   maskSize: 'contain',
